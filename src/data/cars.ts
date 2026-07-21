@@ -1,4 +1,5 @@
 import type { Car, BodyType, FuelType, TransmissionType, Drivetrain } from '@/types';
+import { USD_TO_PKR_RATE } from '@/lib/format';
 
 interface Spec {
   brand: string;
@@ -175,7 +176,7 @@ export function generateCars(): Car[] {
     const condition = isUsed ? 'Used' : isCPO ? 'Certified Pre-Owned' : 'New';
     const mileage = condition === 'New' ? 0 : Math.floor(rand() * 60000) + 5000;
     const priceAdj = (1 - (2025 - year) * 0.06) * (1 - mileage / 400000);
-    const price = Math.round((spec.basePrice * priceAdj) / 100) * 100;
+    const price = Math.round((spec.basePrice * USD_TO_PKR_RATE * priceAdj) / 100) * 100;
     const [color, interior] = COLOR_PAIRS[i % COLOR_PAIRS.length];
     const desc = DESC_TEMPLATES[i % DESC_TEMPLATES.length]
       .replace('{brand}', spec.brand)

@@ -20,7 +20,7 @@ export function StatsStrip() {
 }
 
 export function FinancingCTA() {
-  const [price, setPrice] = useState(65000);
+  const [price, setPrice] = useState(6500000);
   const [down, setDown] = useState(10);
   const [term, setTerm] = useState(60);
   const apr = 5.9;

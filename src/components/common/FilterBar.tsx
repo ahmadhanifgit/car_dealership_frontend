@@ -89,7 +89,7 @@ export function FilterBar({ filters, onChange, onReset, resultCount }: Props) {
       <FilterGroup title="Transmission" options={TRANSMISSIONS.map((t) => ({ value: t, label: t }))} value={filters.transmission ?? null} onChange={(v) => set({ transmission: v as CarFilters['transmission'] })} />
       <FilterGroup title="Drivetrain" options={DRIVETRAINS.map((d) => ({ value: d, label: d }))} value={filters.drivetrain ?? null} onChange={(v) => set({ drivetrain: v as CarFilters['drivetrain'] })} />
       <FilterGroup title="Condition" options={CONDITIONS.map((c) => ({ value: c, label: c }))} value={filters.condition ?? null} onChange={(v) => set({ condition: v as CarFilters['condition'] })} />
-      <RangeInputs label="Price" min={PRICE_BOUNDS.min} max={PRICE_BOUNDS.max} step={1000} minVal={filters.minPrice} maxVal={filters.maxPrice} onChange={(mn, mx) => set({ minPrice: mn, maxPrice: mx })} format={formatCurrency} />
+      <RangeInputs label="Price" min={PRICE_BOUNDS.min} max={PRICE_BOUNDS.max} step={1000000} minVal={filters.minPrice} maxVal={filters.maxPrice} onChange={(mn, mx) => set({ minPrice: mn, maxPrice: mx })} format={formatCurrency} />
       <RangeInputs label="Year" min={YEAR_BOUNDS.min} max={YEAR_BOUNDS.max} step={1} minVal={filters.minYear} maxVal={filters.maxYear} onChange={(mn, mx) => set({ minYear: mn, maxYear: mx })} format={String} />
       <RangeInputs label="Mileage" min={MILEAGE_BOUNDS.min} max={MILEAGE_BOUNDS.max} step={1000} minVal={filters.minMileage} maxVal={filters.maxMileage} onChange={(mn, mx) => set({ minMileage: mn, maxMileage: mx })} format={formatNumber} />
     </div>

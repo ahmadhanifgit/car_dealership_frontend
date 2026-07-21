@@ -1,7 +1,9 @@
+export const USD_TO_PKR_RATE = 280;
+
 export function formatCurrency(value: number): string {
-  return new Intl.NumberFormat('en-US', {
+  return new Intl.NumberFormat('en-PK', {
     style: 'currency',
-    currency: 'USD',
+    currency: 'PKR',
     maximumFractionDigits: 0,
   }).format(value);
 }

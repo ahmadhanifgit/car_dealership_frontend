@@ -45,7 +45,7 @@ const schema = z.object({
 type FormValues = z.infer<typeof schema>;
 
 const defaults: FormValues = {
-  brand: '', model: '', year: 2024, price: 50000, mileage: 0,
+  brand: '', model: '', year: 2024, price: 5000000, mileage: 0,
   bodyType: 'Sedan', fuelType: 'Petrol', transmission: 'Automatic', drivetrain: 'AWD',
   engineSize: 2.0, horsepower: 250, topSpeed: 200, acceleration: 6.0, seats: 5, doors: 4,
   color: '', interiorColor: '', condition: 'New', status: 'available',
@@ -142,7 +142,7 @@ export function AdminCarForm({ mode }: Props) {
 
         <Section title="Pricing & status" subtitle="How the car shows up in inventory">
           <div className="grid gap-4 sm:grid-cols-3">
-            <Input label="Price (USD) *" type="number" {...register('price', { valueAsNumber: true })} error={errors.price?.message} />
+            <Input label="Price (PKR) *" type="number" {...register('price', { valueAsNumber: true })} error={errors.price?.message} />
             <Input label="Mileage *" type="number" {...register('mileage', { valueAsNumber: true })} error={errors.mileage?.message} />
             <Select label="Status *" {...register('status')} options={[{ value: 'available', label: 'Available' }, { value: 'reserved', label: 'Reserved' }, { value: 'sold', label: 'Sold' }]} error={errors.status?.message} />
           </div>

@@ -4,6 +4,7 @@ import { Search, ChevronRight, Star } from 'lucide-react';
 import { BRANDS, BODY_TYPES, PRICE_BOUNDS } from '@/constants';
 import { Select } from '@/components/common/Field';
 import { Button } from '@/components/common/Button';
+import { formatCurrency } from '@/lib/format';
 
 export function Hero() {
   const navigate = useNavigate();
@@ -14,10 +15,10 @@ export function Hero() {
   const brandOptions = BRANDS.map((b) => ({ value: b.name, label: b.name }));
   const bodyOptions = BODY_TYPES.map((b) => ({ value: b, label: b }));
   const priceOptions = [
-    { value: '30000', label: 'Up to $30,000' },
-    { value: '50000', label: 'Up to $50,000' },
-    { value: '80000', label: 'Up to $80,000' },
-    { value: '120000', label: 'Up to $120,000' },
+    { value: String(PRICE_BOUNDS.min), label: `Up to ${formatCurrency(PRICE_BOUNDS.min)}` },
+    { value: String(PRICE_BOUNDS.min * 2), label: `Up to ${formatCurrency(PRICE_BOUNDS.min * 2)}` },
+    { value: String(PRICE_BOUNDS.min * 3), label: `Up to ${formatCurrency(PRICE_BOUNDS.min * 3)}` },
+    { value: String(PRICE_BOUNDS.min * 4), label: `Up to ${formatCurrency(PRICE_BOUNDS.min * 4)}` },
     { value: String(PRICE_BOUNDS.max), label: 'No limit' },
   ];
 

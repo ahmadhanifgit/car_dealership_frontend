@@ -39,7 +39,7 @@ export const SORT_OPTIONS: { key: SortKey; label: string }[] = [
   { key: 'horsepower_desc', label: 'Most powerful' },
 ];
 
-export const PRICE_BOUNDS = { min: 15000, max: 350000 };
+export const PRICE_BOUNDS = { min: 15000 * 280, max: 350000 * 280 };
 export const YEAR_BOUNDS = { min: 2015, max: 2025 };
 export const MILEAGE_BOUNDS = { min: 0, max: 120000 };
 
